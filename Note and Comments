@@ -14,3 +14,19 @@ URL：https://www.runoob.com/linux/linux-system-contents.html
 
 /var： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 /var/log 目录下，另外 mail 的预设放置也是在这里。
 
+三、如何在 Ubuntu 中安装软件（不打开软件中心的情况下）？这些软件被安装在什么地方？如 果只知道模糊的软件名称（比如想要装一个名称中含有 eigen 的库），应该如何安装它？
+使用 apt 命令安装软件：
+sudo apt update：更新软件包列表
+sudo apt install 软件包名称：安装指定的软件包
+例如，要安装名为eigen的库，可以使用命令sudo apt install libeigen3-dev
+使用 dpkg 命令安装 deb 包：
+
+sudo dpkg -i 软件包文件.deb：安装指定的 deb 软件包
+例如，sudo dpkg -i package.deb
+软件安装目录：
+
+大多数软件通常被安装在/usr/bin目录下，可执行文件在这个目录中
+库文件通常被安装在/usr/lib或/usr/lib64目录下
+配置文件通常被安装在/etc目录下
+如果你只知道模糊的软件名称，可以使用apt search命令来搜索软件包，然后再安装它。例如，使用apt search eigen来搜索包含eigen关键字的软件包。
+
